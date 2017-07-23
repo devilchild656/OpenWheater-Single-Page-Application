@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Open Weather - Exam Miroslav Chalov </title>
+    <!--Meta data for the app-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Style for the Weather app-->
+    <link rel="stylesheet" href="../app/js/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../app/css/main.css">
+
+    <!--Libraries for the app-->
+
+    <script src="../app/js/bower_components/jquery/dist/jquery.js" type="text/javascript"></script>
+    <script src="../app/js/bower_components/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" type="text/javascript"></script>
+
+
+    <!--Scripts for the app-->
+    <script src="../app/controllers/mainController.js" type="text/javascript"></script>
+    <script src="../app/directives/mainDirective.js" type="text/javascript"></script>
+    <script src="../app/services/userService.js" type="text/javascript"></script>
+
+</head>
+<body ng-app="weatherApp" ng-controller="weatherCtrl" class= "text-center">
+<div class="container-fluid">
+<!--Header and Navigation-->
+    <div class="row" id="mainHeader">
+        <header>
+            <div class="col-lg-8 col-md-8 col-sm-12">
+                <h1 class="col-lg-6 col-md-6 col-sm-12">{{channelInfo.heading}}</h1>
+            </div>
+            <nav class="navbar-header nav-pills col-lg-4 col-md-4 col-sm-12" data-toggle="collapse" id="navbar">
+                <button ng-click="LondonCall()" ng-href="#here" class="active" role="presentation">{{channelInfo.london}}</button>
+                <button ng-click="SofiaCall()" ng-href="#here"  role="presentation">{{channelInfo.sofia}}</button>
+                <button ng-click="ParisCall()" ng-href="#here" role="presentation">{{channelInfo.paris}}</button>
+                <button ng-click="RomeCall()" ng-href="#here"  role="presentation">{{channelInfo.rome}}</button>
+                <button ng-click="BarcelonaCall()" ng-href="#here"  role="presentation">{{channelInfo.barcelona}}</button>
+            </nav>
+        </header>
+    </div>
+    <!--Weather Container-->
+    <div class="row col-lg-8 col-md-8 col-sm-12 cityContainer" >
+        <h1 class="headings">{{city}}</h1>
+        <div class="col-lg-12 col-md-12 col-sm-12 weatherBox" id="imageCity">
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 speed box-ct">
+            <div class="icon">
+                <img src="../images/wind.png" alt="">
+            </div>
+            <div class="info-text">
+                {{infoCity.wind}} {{wind}} m/s
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 temp box-ct">
+            <div class="icon">
+                <img src="../images/temp.png" alt="">
+            </div>
+            <div class="info-text">
+                {{infoCity.temp}} {{temp}} 	&#8451;
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 clouds box-ct">
+            <div class="icon" >
+                <img src="http://openweathermap.org/img/w/{{icon}}.png"  id="clouds" alt="">
+            </div>
+            <div class="info-text">
+
+                {{infoCity.weather}}  {{weather}}
+            </div>
+
+        </div>
+    </div>
+    <!--Weather Container for 5 days-->
+    <div class="col-lg-4 col-md-4 col-sm-12" id="details">
+        <h1 class="headings">
+            More Datails for 5 Days
+        </h1>
+        <div class="row" id="fiveContainer">
+            <div class="col-lg-12 col-md-12 col-sm-12" ng-repeat="data in listData">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 date">
+                    <div>{{data.date}}</div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4  col-xs-4 tempFive">
+                    <div>{{data.temp}} &#8451;</div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 descFive">
+                    <div>{{data.desc}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Footer-->
+    <div class="row">
+        <footer class="col-lg-12 col-md-12 col-sm-12">Copyright {{channelInfo.copyright}} &#169;</footer>
+    </div>
+</div>
+
+
+
+
+</h1>
+</body>
+</html>

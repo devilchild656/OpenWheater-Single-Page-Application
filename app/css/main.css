@@ -1,0 +1,103 @@
+@font-face {
+  font-family: Exo-ExtraBoldt;
+  src: url(fonts/Exo-ExtraBold.otf); }
+@font-face {
+  font-family: Exo-regular;
+  src: url(fonts/Exo-Regular.otf); }
+body {
+  background: black;
+  background: -moz-linear-gradient(-45deg, black 0%, rgba(112, 55, 112, 0.81) 100%);
+  background: -webkit-gradient(left top, right bottom, color-stop(0%, black), color-stop(100%, rgba(112, 55, 112, 0.81)));
+  background: -webkit-linear-gradient(-45deg, black 0%, rgba(112, 55, 112, 0.81) 100%);
+  background: -o-linear-gradient(-45deg, black 0%, rgba(112, 55, 112, 0.81) 100%);
+  background: -ms-linear-gradient(-45deg, black 0%, rgba(112, 55, 112, 0.81) 100%);
+  background: linear-gradient(135deg, black 0%, rgba(112, 55, 112, 0.81) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#703770', GradientType=1 );
+  height: 100vh;
+  font-size: 10px;
+  font-family: Exo-regular,sans-serif; }
+
+#mainHeader {
+  padding-left: 10px;
+  text-align: left;
+  color: #fff; }
+  #mainHeader h1 {
+    font-family: Exo-ExtraBoldt,sans-serif; }
+
+.headings {
+  color: #fff;
+  font-family: Exo-ExtraBoldt,sans-serif; }
+
+#mainHeader button {
+  background: none;
+  border: none;
+  border-right: 1px solid #fff;
+  font-size: 1.8rem;
+  font-family: Exo-regular,sans-serif; }
+#mainHeader button:last-child {
+  border-right: none; }
+#mainHeader #navbar {
+  padding-top: 20px;
+  line-height: 30px;
+  text-align: center;
+  margin-left: -3px; }
+  #mainHeader #navbar button:hover {
+    background: #fff;
+    color: black;
+    border: none;
+    margin-left: -3px; }
+  #mainHeader #navbar button:focus {
+    border: none;
+    background: #fff;
+    color: black;
+    margin-left: -3px; }
+
+.cityContainer .weatherBox {
+  height: 300px;
+  background: url("../../images/wind.jpg") no-repeat;
+  background-size: cover; }
+.cityContainer .box-ct {
+  padding-top: 20px;
+  height: 140px;
+  border: 1px solid #fff;
+  background: #fff; }
+.cityContainer .info-text {
+  font-size: 2rem; }
+.cityContainer .icon {
+  height: 80px; }
+  .cityContainer .icon img {
+    width: 60px; }
+.cityContainer #clouds {
+  padding-top: 5px; }
+
+#details {
+  height: 510px;
+  overflow: auto; }
+
+#fiveContainer div {
+  font-size: 1.2rem;
+  color: #fff; }
+
+footer {
+  padding-top: 10px;
+  color: #fff;
+  font-size: 2rem; }
+
+@media screen and (max-width: 990px) {
+  .row {
+    padding: 0;
+    margin: 0; }
+
+  header h1 {
+    text-align: center; }
+
+  .headings {
+    text-align: center; } }
+@media screen and (max-width: 600px) {
+  #details {
+    display: none; } }
+@media screen and (max-width: 500px) {
+  #navbar button {
+    font-size: 1.5rem; } }
+
+/*# sourceMappingURL=main.css.map */
